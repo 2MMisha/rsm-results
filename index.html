@@ -1,31 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Competition Results</title>
-  <style>
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f9f9f9;
-      color: #333;
-    }
-
-    header {
-      background-color: #004aad;
-      color: white;
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      width: 100%;
-      z-index: 1000;
-    }<!DOCTYPE html>
-<html>
-<head>
+    <meta charset="UTF-8" />
     <title>Results</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
         body {
             font-family: 'Montserrat', sans-serif;
@@ -140,211 +118,61 @@
             }
         }
     </style>
-    <link rel="icon" href="/static/web.ico" type="image/x-icon">
+    <link rel="icon" href="/static/web.ico" type="image/x-icon" />
 </head>
 
-<body>
-
-    <header>
-        <div class="header-content">
-            <h1>Results</h1>
-            <div class="nav-buttons">
-                
-                    <a href="#Performing">Performing</a>
-                
-            </div>
-        </div>
-    </header>
-
-    <main>
-        
-            <section id="Performing">
-                <h2>Category: Performing</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Place</th>
-                            <th>Name</th>
-                            <th>Score</th>
-                            
-                                <th>Zhenya 1</th>
-                            
-                                <th>Zhenya 2</th>
-                            
-                                <th>Roman 1</th>
-                            
-                                <th>Roman 2</th>
-                            
-                        </tr>
-                    </thead>
-                    <tbody>
-                        
-                            <tr>
-                                <td>🏆</td>
-                                <td>4. Sasha Din - Shma Israel</td>
-                                <td>7.57</td>
-                                
-                                    <td>
-                                        
-                                            
-                                                7.0
-                                            
-                                        
-                                            
-                                        
-                                            
-                                        
-                                    </td>
-                                
-                                    <td>
-                                        
-                                            
-                                        
-                                            
-                                                10.0
-                                            
-                                        
-                                            
-                                        
-                                    </td>
-                                
-                                    <td>
-                                        
-                                            
-                                        
-                                            
-                                        
-                                            
-                                                5.7
-                                            
-                                        
-                                    </td>
-                                
-                                    <td>
-                                        
-                                            
-                                        
-                                            
-                                        
-                                            
-                                        
-                                    </td>
-                                
-                            </tr>
-                        
-                    </tbody>
-                </table>
-            </section>
-        
-    </main>
-
-</body>
-</html>
-
-    nav {
-      background-color: #eee;
-      padding: 1rem;
-      text-align: center;
-      position: fixed;
-      top: 70px; /* высота header-а */
-      width: 100%;
-      z-index: 999;
-    }
-
-    nav a {
-      margin: 0 1rem;
-      color: #004aad;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 150px 20px 40px; /* отступ сверху, чтобы не перекрывать контент */
-    }
-
-    section {
-      margin-bottom: 4rem;
-    }
-
-    h2 {
-      color: #004aad;
-      border-bottom: 2px solid #004aad;
-      padding-bottom: 0.5rem;
-    }
-
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      margin-top: 1rem;
-    }
-
-    table th, table td {
-      border: 1px solid #ccc;
-      padding: 0.5rem;
-      text-align: center;
-    }
-
-    table th {
-      background-color: #004aad;
-      color: white;
-    }
-  </style>
-</head>
 <body>
 
 <header>
-  <h1>Competition Results</h1>
-
-
-<nav>
-  <a href="#performing">Performing</a>
-  <a href="#singing">Singing</a>
-  <a href="#dancing">Dancing</a>
-</nav>
+    <div class="header-content">
+        <img src="/static/logo.png" alt="Logo" class="logo" />
+        <h1>Results</h1>
+        <div class="nav-buttons">
+            <a href="#Performing">Performing</a>
+            <a href="#Singing">Singing</a>
+            <a href="#Dancing">Dancing</a>
+        </div>
+    </div>
 </header>
 
 <main>
-  <section id="performing">
-    <h2>Category: Performing</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Place</th>
-          <th>Name</th>
-          <th>Score</th>
-          <th>Zhenya 1</th>
-          <th>Zhenya 2</th>
-          <th>Roman 1</th>
-          <th>Roman 2</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>🏆</td>
-          <td>4. Sasha Din - Shma Israel</td>
-          <td>7.57</td>
-          <td>7.0</td>
-          <td>10.0</td>
-          <td>5.7</td>
-          <td></td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
+    <section id="Performing">
+        <h2>Category: Performing</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Place</th>
+                    <th>Name</th>
+                    <th>Score</th>
+                    <th>Zhenya 1</th>
+                    <th>Zhenya 2</th>
+                    <th>Roman 1</th>
+                    <th>Roman 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>🏆</td>
+                    <td>4. Sasha Din - Shma Israel</td>
+                    <td>7.57</td>
+                    <td>7.0</td>
+                    <td>10.0</td>
+                    <td>5.7</td>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
 
-  <section id="singing">
-    <h2>Category: Singing</h2>
-    <p>Coming soon...</p>
-  </section>
+    <section id="Singing">
+        <h2>Category: Singing</h2>
+        <p>Coming soon...</p>
+    </section>
 
-  <section id="dancing">
-    <h2>Category: Dancing</h2>
-    <p>Coming soon...</p>
-  </section>
+    <section id="Dancing">
+        <h2>Category: Dancing</h2>
+        <p>Coming soon...</p>
+    </section>
 </main>
 
 </body>
