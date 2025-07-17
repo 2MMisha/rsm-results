@@ -1,160 +1,141 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dance Competition Navigation</title>
-    <link rel="icon" href="/static/web.ico" type="image/x-icon" />
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            padding: 30px 20px;
-            background: #121212;
-            color: #e0e0e0;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Dance Competition Navigation</title>
+  <link rel="icon" href="/static/web.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 30px 20px;
+      background: #f9f9f9;
+      color: #333;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
-        h1 {
-            margin-bottom: 24px;
-            font-size: 2rem;
-            text-align: center;
-            color: #00cfff;
-        }
+    h1 {
+      margin-bottom: 24px;
+      font-size: 2rem;
+      text-align: center;
+      color: #2c3e50;
+    }
 
-        .block {
-            background: #1e1e1e;
-            border-radius: 10px;
-            padding: 20px 25px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-            margin-bottom: 30px;
-        }
+    .block {
+      background: #ffffff;
+      border-radius: 10px;
+      padding: 20px 25px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 30px;
+    }
 
-        h2 {
-            margin-top: 0;
-            margin-bottom: 16px;
-            font-size: 1.5rem;
-            color: #00aaff;
-        }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 16px;
+      font-size: 1.5rem;
+      color: #0077cc;
+    }
 
-        ul {
-            padding-left: 20px;
-            margin: 0;
-        }
+    .nav .btn-group {
+      display: flex;
+      overflow-x: auto;
+      gap: 16px;
+      padding-bottom: 8px;
+      scrollbar-width: thin;
+      scrollbar-color: #ccc #f0f0f0;
+    }
 
-        ul li {
-            margin-bottom: 12px;
-            font-size: 1.1rem;
-        }
+    .nav .btn-group::-webkit-scrollbar {
+      height: 10px;
+    }
 
-        ul li strong {
-            color: #ffffff;
-        }
+    .nav .btn-group::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
 
-        ul li a {
-            text-decoration: none;
-            color: #00cfff;
-            background: #263238;
-            border-radius: 5px;
-            padding: 6px 12px;
-            margin-left: 8px;
-            transition: background-color 0.3s, color 0.3s;
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
+    .nav .btn-group::-webkit-scrollbar-thumb {
+      background-color: #ccc;
+      border-radius: 5px;
+    }
 
-        ul li a:hover,
-        ul li a:focus {
-            background: #37474f;
-            color: #80eaff;
-            outline: none;
-        }
+    .nav .btn-group a {
+      flex: 0 0 auto;
+      min-width: 220px;
+      text-align: center;
+      padding: 16px 20px;
+      font-size: 1rem;
+      font-weight: 600;
+      color: #0077cc;
+      background: #f0f8ff;
+      border-radius: 8px;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    }
 
-        .nav .btn-group {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 16px;
-            justify-content: center;
-        }
+    .nav .btn-group a:hover,
+    .nav .btn-group a:focus {
+      background: #e6f3ff;
+      color: #005fa3;
+      outline: none;
+    }
 
-        .nav .btn-group a {
-            flex: 1 1 200px;
-            text-align: center;
-            padding: 14px 18px;
-            font-size: 1rem;
-            font-weight: 600;
-            color: #00cfff;
-            background: #263238;
-            border-radius: 8px;
-            transition: background-color 0.3s, color 0.3s;
-            text-decoration: none;
-        }
+    .nav .btn-group a small {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.85rem;
+      color: #666;
+    }
 
-        .nav .btn-group a:hover,
-        .nav .btn-group a:focus {
-            background: #37474f;
-            color: #80eaff;
-            outline: none;
-        }
-
-        .nav .btn-group a small {
-            display: block;
-            margin-top: 4px;
-            font-size: 0.85rem;
-            color: #bbbbbb;
-        }
-
-        @media (max-width: 480px) {
-            body {
-                padding: 15px 10px;
-            }
-            h1 {
-                font-size: 1.6rem;
-            }
-            h2 {
-                font-size: 1.3rem;
-            }
-            ul li {
-                font-size: 1rem;
-            }
-            .nav .btn-group a {
-                flex: 1 1 100%;
-                font-size: 0.95rem;
-            }
-        }
-    </style>
+    @media (max-width: 480px) {
+      body {
+        padding: 15px 10px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+      h2 {
+        font-size: 1.3rem;
+      }
+      .nav .btn-group a {
+        min-width: 180px;
+        font-size: 0.95rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <h1>🏆 Rising Star Manager - Results Menu</h1>
 <div class="block nav">
-    <h2>📊 Competition Results Gallery</h2>
-    <div class="btn-group">
-                <a href="edc-test/index.html">
-            EDC-TEST
-            <small>Test comp</small>
-        </a>
-        <a href="spring2025/index.html">
-            🌸 Spring Cup 2025
-            <small>March 14 — Open Latin & Standard</small>
-        </a>
-        <a href="northopen/index.html">
-            ❄️ North Open
-            <small>April 3 — Regional Selection Event</small>
-        </a>
-        <a href="summerdance/index.html">
-            ☀️ Summer Dance Challenge
-            <small>June 18 — Youth & Adults Finals</small>
-        </a>
-        <a href="goldstar/index.html">
-            🌟 Gold Star Championship
-            <small>July 5 — All Categories Mixed</small>
-        </a>
-        <a href="aliyaday/index.html">
-            🇮🇱 Aliya Day Dance Cup
-            <small>October 29 — Celebrating Aliya through Dance</small>
-        </a>
-    </div>
+  <h2>📊 Competition Results Gallery</h2>
+  <div class="btn-group">
+    <a href="edc-test/index.html">
+      EDC-TEST
+      <small>Test comp</small>
+    </a>
+    <a href="spring2025/index.html">
+      🌸 Spring Cup 2025
+      <small>March 14 — Open Latin & Standard</small>
+    </a>
+    <a href="northopen/index.html">
+      ❄️ North Open
+      <small>April 3 — Regional Selection Event</small>
+    </a>
+    <a href="summerdance/index.html">
+      ☀️ Summer Dance Challenge
+      <small>June 18 — Youth & Adults Finals</small>
+    </a>
+    <a href="goldstar/index.html">
+      🌟 Gold Star Championship
+      <small>July 5 — All Categories Mixed</small>
+    </a>
+    <a href="aliyaday/index.html">
+      🇮🇱 Aliya Day Dance Cup
+      <small>October 29 — Celebrating Aliya through Dance</small>
+    </a>
+  </div>
 </div>
 
 </body>
