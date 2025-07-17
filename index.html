@@ -9,7 +9,7 @@
     body {
       font-family: Arial, sans-serif;
       padding: 30px 20px;
-      background: #f9f9f9;
+      background: #f5f7fa;
       color: #333;
       max-width: 1000px;
       margin: 0 auto;
@@ -26,7 +26,7 @@
       background: #ffffff;
       border-radius: 10px;
       padding: 20px 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
       margin-bottom: 30px;
     }
 
@@ -37,70 +37,64 @@
       color: #0077cc;
     }
 
-    .nav .btn-group {
+    .event-list {
       display: flex;
-      overflow-x: auto;
-      gap: 16px;
-      padding-bottom: 8px;
-      scrollbar-width: thin;
-      scrollbar-color: #ccc #f0f0f0;
+      flex-direction: column;
+      gap: 20px;
     }
 
-    .nav .btn-group::-webkit-scrollbar {
-      height: 10px;
-    }
-
-    .nav .btn-group::-webkit-scrollbar-track {
-      background: #f0f0f0;
-    }
-
-    .nav .btn-group::-webkit-scrollbar-thumb {
-      background-color: #ccc;
-      border-radius: 5px;
-    }
-
-    .nav .btn-group a {
-      flex: 0 0 auto;
-      min-width: 220px;
-      text-align: center;
-      padding: 16px 20px;
-      font-size: 1rem;
-      font-weight: 600;
-      color: #0077cc;
+    .event-item {
+      display: flex;
+      align-items: center;
       background: #f0f8ff;
-      border-radius: 8px;
-      transition: background-color 0.3s, color 0.3s;
+      border-radius: 10px;
+      padding: 12px 16px;
+      transition: background-color 0.3s;
       text-decoration: none;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      color: inherit;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
     }
 
-    .nav .btn-group a:hover,
-    .nav .btn-group a:focus {
-      background: #e6f3ff;
-      color: #005fa3;
-      outline: none;
+    .event-item:hover {
+      background-color: #e6f3ff;
     }
 
-    .nav .btn-group a small {
-      display: block;
-      margin-top: 4px;
-      font-size: 0.85rem;
-      color: #666;
+    .event-item img {
+      width: 60px;
+      height: 60px;
+      border-radius: 8px;
+      margin-right: 16px;
+      object-fit: cover;
+      background: #ddd;
     }
 
-    @media (max-width: 480px) {
-      body {
-        padding: 15px 10px;
+    .event-info {
+      flex-grow: 1;
+    }
+
+    .event-title {
+      font-size: 1.1rem;
+      font-weight: bold;
+      color: #0077cc;
+    }
+
+    .event-desc {
+      font-size: 0.95rem;
+      color: #555;
+    }
+
+    @media (max-width: 600px) {
+      .event-item {
+        flex-direction: column;
+        align-items: flex-start;
       }
-      h1 {
-        font-size: 1.6rem;
+
+      .event-item img {
+        margin: 0 0 10px 0;
       }
-      h2 {
-        font-size: 1.3rem;
-      }
-      .nav .btn-group a {
-        min-width: 180px;
-        font-size: 0.95rem;
+
+      .event-info {
+        text-align: left;
       }
     }
   </style>
@@ -108,32 +102,55 @@
 <body>
 
 <h1>🏆 Rising Star Manager - Results Menu</h1>
-<div class="block nav">
+<div class="block">
   <h2>📊 Competition Results Gallery</h2>
-  <div class="btn-group">
-    <a href="edc-test/index.html">
-      EDC-TEST
-      <small>Test comp</small>
+  <div class="event-list">
+    <a class="event-item" href="edc-test/index.html">
+      <img src="logo.png" alt="EDC-TEST Logo" />
+      <div class="event-info">
+        <div class="event-title">EDC-TEST</div>
+        <div class="event-desc">Test comp</div>
+      </div>
     </a>
-    <a href="spring2025/index.html">
-      🌸 Spring Cup 2025
-      <small>March 14 — Open Latin & Standard</small>
+
+    <a class="event-item" href="spring2025/index.html">
+      <img src="logo.png" alt="Spring Cup Logo" />
+      <div class="event-info">
+        <div class="event-title">🌸 Spring Cup 2025</div>
+        <div class="event-desc">March 14 — Open Latin & Standard</div>
+      </div>
     </a>
-    <a href="northopen/index.html">
-      ❄️ North Open
-      <small>April 3 — Regional Selection Event</small>
+
+    <a class="event-item" href="northopen/index.html">
+      <img src="logo.png" alt="North Open Logo" />
+      <div class="event-info">
+        <div class="event-title">❄️ North Open</div>
+        <div class="event-desc">April 3 — Regional Selection Event</div>
+      </div>
     </a>
-    <a href="summerdance/index.html">
-      ☀️ Summer Dance Challenge
-      <small>June 18 — Youth & Adults Finals</small>
+
+    <a class="event-item" href="summerdance/index.html">
+      <img src="logo.png" alt="Summer Dance Logo" />
+      <div class="event-info">
+        <div class="event-title">☀️ Summer Dance Challenge</div>
+        <div class="event-desc">June 18 — Youth & Adults Finals</div>
+      </div>
     </a>
-    <a href="goldstar/index.html">
-      🌟 Gold Star Championship
-      <small>July 5 — All Categories Mixed</small>
+
+    <a class="event-item" href="goldstar/index.html">
+      <img src="logo.png" alt="Gold Star Logo" />
+      <div class="event-info">
+        <div class="event-title">🌟 Gold Star Championship</div>
+        <div class="event-desc">July 5 — All Categories Mixed</div>
+      </div>
     </a>
-    <a href="aliyaday/index.html">
-      🇮🇱 Aliya Day Dance Cup
-      <small>October 29 — Celebrating Aliya through Dance</small>
+
+    <a class="event-item" href="aliyaday/index.html">
+      <img src="logo.png" alt="Aliya Day Logo" />
+      <div class="event-info">
+        <div class="event-title">🇮🇱 Aliya Day Dance Cup</div>
+        <div class="event-desc">October 29 — Celebrating Aliya through Dance</div>
+      </div>
     </a>
   </div>
 </div>
