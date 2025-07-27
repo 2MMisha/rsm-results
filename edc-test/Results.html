@@ -102,11 +102,56 @@
         text-align: left;
         color: #555;
       }
+      .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(255, 255, 255, 0.8);
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .closed-text {
+      color: red;
+      font-size: 3rem;
+      font-weight: bold;
+      transform: rotate(-15deg);
+      text-transform: uppercase;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      opacity: 0.8;
+    }
+
+    /* Медиа-запросы для адаптации */
+    @media (min-width: 480px) {
+      .categories {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 768px) {
+      body {
+        padding: 30px;
+      }
+      .registration-form {
+        padding: 30px;
+      }
+      .form-group {
+        margin-bottom: 20px;
+      }
+      .closed-text {
+        font-size: 4rem;
+      }
     }
   </style>
 </head>
 <body>
-
+  <div class="overlay">
+      <div class="closed-text">TEST PAGE</div>
+    <h1 href="https://www.ristar.co">BACK TO THE RISING STAR WEBSITE</h1>
+    </div>
   <h1>Competition Results</h1>
 
   
