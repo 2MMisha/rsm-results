@@ -13,6 +13,8 @@
       color: #333;
       max-width: 1000px;
       margin: auto;
+      position: relative;
+      min-height: 100vh;
     }
     h1, h2, h3, h4 {
       margin-top: 40px;
@@ -69,11 +71,59 @@
       padding-left: 20px;
     }
 
+    /* Overlay styles */
+    .overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.9);
+      z-index: 1000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .overlay-content {
+      max-width: 90%;
+      padding: 20px;
+    }
+
+    .closed-text {
+      color: red;
+      font-size: 3rem;
+      font-weight: bold;
+      transform: rotate(-15deg);
+      text-transform: uppercase;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      margin-bottom: 30px;
+      line-height: 1.2;
+    }
+
+    .back-link {
+      color: #0066cc;
+      font-size: 1.5rem;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 12px 24px;
+      border: 2px solid #0066cc;
+      border-radius: 5px;
+      transition: all 0.3s;
+      display: inline-block;
+      margin-top: 20px;
+    }
+
+    .back-link:hover {
+      background-color: #0066cc;
+      color: white;
+    }
+
     @media (max-width: 720px) {
       body {
         padding: 10px;
-         position: relative;
-  min-height: 100vh;
       }
       table, thead, tbody, th, td, tr {
         display: block;
@@ -104,73 +154,37 @@
         text-align: left;
         color: #555;
       }
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(255, 255, 255, 0.9);
-  z-index: 1000;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.closed-text {
-  color: red;
-  font-size: 3rem;
-  font-weight: bold;
-  transform: rotate(-15deg);
-  text-transform: uppercase;
-  text-align: center;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
-}
-
-.back-link {
-  color: #0066cc;
-  font-size: 1.5rem;
-  text-decoration: none;
-  font-weight: bold;
-  padding: 10px 20px;
-  border: 2px solid #0066cc;
-  border-radius: 5px;
-  transition: all 0.3s;
-}
-
-.back-link:hover {
-  background-color: #0066cc;
-  color: white;
-}
-    /* Медиа-запросы для адаптации */
-    @media (min-width: 480px) {
-      .categories {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-    @media (min-width: 768px) {
-      body {
-        padding: 30px;
-      }
-      .registration-form {
-        padding: 30px;
-      }
-      .form-group {
+      
+      .closed-text {
+        font-size: 2.5rem;
         margin-bottom: 20px;
       }
+      
+      .back-link {
+        font-size: 1.2rem;
+        padding: 10px 20px;
+      }
+    }
+
+    @media (min-width: 768px) {
       .closed-text {
         font-size: 4rem;
+      }
+      
+      .back-link {
+        font-size: 1.8rem;
       }
     }
   </style>
 </head>
 <body>
+  <!-- Overlay -->
   <div class="overlay">
+    <div class="overlay-content">
       <div class="closed-text">TEST PAGE</div>
-  <a href="https://www.ristar.co" class="back-link">BACK TO THE RISING STAR WEBSITE</a>
+      <a href="https://www.ristar.co" class="back-link">BACK TO THE RISING STAR WEBSITE</a>
     </div>
+  </div>
   <h1>Competition Results</h1>
 
   
