@@ -187,5 +187,27 @@
                 });
         });
     </script>
+<script>
+// Функция для фильтрации скрытых папок
+function filterHiddenFolders(items) {
+  return items.filter(item => {
+    return item.type === "dir" && 
+           !item.name.startsWith('.') && // Скрываем точки
+           !['github', 'git'].includes(item.name.toLowerCase()); // И спецпапки
+  });
+}
+
+// Загрузка данных
+fetch('https://api.github.com/repos/2MMisha/rsm-results/contents/')
+  .then(response => response.json())
+  .then(data => {
+    const competitions = filterHiddenFolders(data);
+    
+    // Далее ваш код рендеринга...
+    competitions.forEach(comp => {
+      console.log(comp.name); // Только "чистые" папки
+    });
+  });
+</script>
 </body>
 </html>
