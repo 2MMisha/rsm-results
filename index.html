@@ -172,10 +172,11 @@
       for (const folder of folders) {
         const eventItem = document.createElement('a');
         eventItem.className = 'event-item';
-        eventItem.href = `${folder.name}/index.html`;
+        eventItem.href = `${folder.name}/index.html`; // Оригинальное название в ссылке
 
+        // Форматируем название: $ → пробел, первая буква каждого слова заглавная
         const displayName = folder.name
-          .replace(/-/g, ' ')
+          .replace(/\$/g, ' ')  // Заменяем только $ на пробелы
           .replace(/\b\w/g, l => l.toUpperCase());
 
         const logoName = `${folder.name}.png`;
