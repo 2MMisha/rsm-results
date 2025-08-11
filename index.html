@@ -1,167 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dance Competition Results</title>
-  <link rel="icon" href="/static/web.ico" type="image/x-icon" />
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      padding: 30px 20px;
-      background: #f5f7fa;
-      color: #333;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-
-    h1 {
-      margin-bottom: 24px;
-      font-size: 2rem;
-      text-align: center;
-      color: #2c3e50;
-    }
-
-    .block {
-      background: #ffffff;
-      border-radius: 10px;
-      padding: 20px 25px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-      margin-bottom: 30px;
-    }
-
-    h2 {
-      margin-top: 0;
-      margin-bottom: 16px;
-      font-size: 1.5rem;
-      color: #0077cc;
-    }
-
-    .event-list {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    .event-item {
-      display: flex;
-      align-items: center;
-      background: #f0f8ff;
-      border-radius: 10px;
-      padding: 12px 16px;
-      transition: background-color 0.3s;
-      text-decoration: none;
-      color: inherit;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-    }
-
-    .event-item:hover {
-      background-color: #e6f3ff;
-    }
-
-    .event-item img {
-      width: 60px;
-      height: 60px;
-      border-radius: 8px;
-      margin-right: 16px;
-      object-fit: cover;
-      background: #ddd;
-    }
-
-    .event-info {
-      flex-grow: 1;
-    }
-
-    .event-title {
-      font-size: 1.1rem;
-      font-weight: bold;
-      color: #0077cc;
-    }
-
-    .event-desc {
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    .home-link {
-      display: inline-block;
-      margin-top: 20px;
-      padding: 10px 15px;
-      background: #0077cc;
-      color: white;
-      text-decoration: none;
-      border-radius: 5px;
-      transition: background-color 0.3s;
-    }
-
-    .home-link:hover {
-      background-color: #005fa3;
-    }
-
-    .loading-message,
-    .error-message,
-    .no-competitions {
-      padding: 15px;
-      text-align: center;
-      color: #666;
-      font-style: italic;
-    }
-
-    .error-message {
-      color: #d9534f;
-    }
-
-    .notification {
-      background-color: #fff3cd;
-      border-left: 5px solid #ffc107;
-      padding: 15px;
-      margin-bottom: 20px;
-      border-radius: 4px;
-      display: flex;
-      align-items: center;
-    }
-
-    .notification-icon {
-      margin-right: 10px;
-      font-size: 1.2rem;
-    }
-
-    @media (max-width: 600px) {
-      .event-item {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .event-item img {
-        margin: 0 0 10px 0;
-      }
-
-      .event-info {
-        text-align: left;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Competition Results Gallery</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .competitions-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 25px;
+        }
+        .competition-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        .competition-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        .logo-container {
+            width: 100%;
+            height: 180px; /* Adjust this value to change logo height */
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .competition-logo {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            border-radius: 5px;
+        }
+        .default-logo {
+            width: 120px; /* Size of default logo */
+            opacity: 0.6;
+        }
+        .competition-name {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #2c3e50;
+        }
+        .competition-description {
+            flex-grow: 1;
+            margin-bottom: 15px;
+            color: #555;
+            font-size: 0.95em;
+        }
+        .results-btn {
+            display: inline-block;
+            background: #3498db;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            text-align: center;
+            transition: background 0.3s;
+            font-weight: 500;
+        }
+        .results-btn:hover {
+            background: #2980b9;
+        }
+        .loading {
+            text-align: center;
+            font-size: 1.2em;
+            margin: 50px 0;
+        }
+        .error {
+            color: #e74c3c;
+            text-align: center;
+            margin: 50px 0;
+        }
+    </style>
 </head>
 <body>
-
-<h1>🏆 Rising Star Manager - Results Menu</h1>
-<div class="block">
-  <h2>📊 Competition Results Gallery</h2>
-  
-  <div class="notification" id="results-notification">
-    <span class="notification-icon">⏳</span>
-    <div>
-      <strong>Please note:</strong> THE SITE IS ON RENOVATION. 0547798676 / reg.risingstar@gmail.com / 2mmedia.il@gmail.com
-    
+    <div class="container">
+        <h1>Competition Results</h1>
+        <div id="competitions-container">
+            <div class="loading">Loading competitions list...</div>
+        </div>
     </div>
-  </div>
-  
-  <div class="event-list" id="results-list">
-    <div class="loading-message">Loading competitions...</div>
-  </div>
-</div>
-<a href="https://www.ristar.co" class="home-link">HOME</a>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const container = document.getElementById('competitions-container');
+            const DEFAULT_LOGO = 'logo.png'; // Default logo filename
+            
+            // Fetch list of competitions (folders)
+            fetch('https://api.github.com/repos/2MMisha/rsm-results/contents/')
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Failed to load competitions list');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    // Filter only directories
+                    const competitions = data.filter(item => item.type === 'dir');
+                    
+                    if (competitions.length === 0) {
+                        container.innerHTML = '<div class="error">No competitions available</div>';
+                        return;
+                    }
+                    
+                    // Process each competition
+                    const competitionPromises = competitions.map(competition => {
+                        const competitionData = {
+                            name: competition.name.replace(/\$/g, ' '),
+                            path: competition.path,
+                            logoUrl: `https://raw.githubusercontent.com/2MMisha/rsm-results/main/${competition.name}.png`,
+                            defaultLogoUrl: `https://raw.githubusercontent.com/2MMisha/rsm-results/main/${DEFAULT_LOGO}`,
+                            resultsUrl: `https://2mmisha.github.io/rsm-results/${competition.name}/`
+                        };
 
+                        // Try to fetch description
+                        return fetch(`https://raw.githubusercontent.com/2MMisha/rsm-results/main/${competition.name}/description.txt`)
+                            .then(descResponse => {
+                                if (descResponse.ok) {
+                                    return descResponse.text()
+                                        .then(text => {
+                                            competitionData.description = text;
+                                            return competitionData;
+                                        });
+                                }
+                                competitionData.description = "No description available";
+                                return competitionData;
+                            })
+                            .catch(() => {
+                                competitionData.description = "No description available";
+                                return competitionData;
+                            });
+                    });
+                    
+                    // Wait for all competitions to be processed
+                    return Promise.all(competitionPromises);
+                })
+                .then(competitionsData => {
+                    // Render competitions
+                    let html = '<div class="competitions-grid">';
+                    
+                    competitionsData.forEach(competition => {
+                        html += `
+                            <div class="competition-card">
+                                <div class="logo-container">
+                                    <img src="${competition.logoUrl}" alt="${competition.name} logo" 
+                                         class="competition-logo"
+                                         onerror="this.onerror=null; this.src='${competition.defaultLogoUrl}'; this.classList.add('default-logo');">
+                                </div>
+                                <div class="competition-name">${competition.name}</div>
+                                <div class="competition-description">${competition.description}</div>
+                                <a href="${competition.resultsUrl}" class="results-btn">
+                                    View Results
+                                </a>
+                            </div>
+                        `;
+                    });
+                    
+                    html += '</div>';
+                    container.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    container.innerHTML = `<div class="error">Error loading competitions: ${error.message}</div>`;
+                });
+        });
+    </script>
 </body>
 </html>
