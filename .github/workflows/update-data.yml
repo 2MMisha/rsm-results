@@ -1,19 +1,28 @@
-name: Update Data
-on:
+name: Update Data  # Название workflow
+
+on:  # Триггеры запуска
   push:
-    branches: [ main ]
+    branches: [ main ]  # Запуск при пуше в main
   schedule:
-    - cron: '0 21 * * *' # Каждый день в 12:00 МСК
+    - cron: '0 0 * * *'  # Ежедневно в 00:00 UTC
 
 jobs:
   update:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest  # Используем последний Ubuntu
+    
     steps:
+      # Шаг 1: Получаем код из репозитория
       - uses: actions/checkout@v4
+      
+      # Шаг 2: Устанавливаем Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
+      
+      # Шаг 3: Запускаем скрипт генерации data.json
       - run: node update-data.js
+      
+      # Шаг 4: Пушим изменения (если они есть)
       - name: Commit changes
         run: |
           git config --global user.name "GitHub Actions"
