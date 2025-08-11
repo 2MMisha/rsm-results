@@ -1,0 +1,26 @@
+[
+  {
+    "name": ".git",
+    "logo": ".git.png",
+    "description": "No description",
+    "resultsUrl": ".git/"
+  },
+  {
+    "name": ".github",
+    "logo": ".github.png",
+    "description": "No description",
+    "resultsUrl": ".github/"
+  },
+  {
+    "name": "MDA Internal Competition-2025",
+    "logo": "MDA$Internal$Competition-2025.png",
+    "description": "Maccabi Dance Avenue Internal Competition - 2025\n",
+    "resultsUrl": "MDA$Internal$Competition-2025/"
+  },
+  {
+    "name": "edc-test",
+    "logo": "edc-test.png",
+    "description": "FOR TESTING PURPOSES ONLY!\n",
+    "resultsUrl": "edc-test/"
+  }
+]
