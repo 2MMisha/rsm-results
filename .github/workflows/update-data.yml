@@ -1,35 +1,33 @@
-name: Update Data  # Название workflow
+name: Update Data
 
-on:  # Триггеры запуска
+on:
   push:
-    branches: [ main ]  # Запуск при пуше в main
+    branches: [ main ]
   schedule:
-    - cron: '0 0 * * *'  # Ежедневно в 00:00 UTC
+    - cron: '0 0 * * *'  # Daily at 00:00 UTC
 
 jobs:
   update:
-    runs-on: ubuntu-latest  # Используем последний Ubuntu
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write  # Required to push changes
     
     steps:
-      # Шаг 1: Получаем код из репозитория
       - uses: actions/checkout@v4
       
-      # Шаг 2: Устанавливаем Node.js
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
       
-      # Шаг 3: Запускаем скрипт генерации data.json
-      - run: node update-data.js
+      - name: Generate data.json
+        run: node update-data.js
       
-      # Шаг 4: Пушим изменения (если они есть)
-      - name: Commit changes
-  env:
-    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  run: |
-    git config --global user.name "GitHub Actions"
-    git config --global user.email "actions@github.com"
-    git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/${{ github.repository }}
-    git add data.json
-    git commit -m "Auto-update data.json" || echo "No changes"
-    git push origin main
+      - name: Commit and push changes
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config --global user.name "GitHub Actions"
+          git config --global user.email "actions@github.com"
+          git add data.json
+          git commit -m "Auto-update data.json" || echo "No changes"
+          git push
