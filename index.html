@@ -117,28 +117,81 @@
         <div id="last-updated" class="last-updated"></div>
     </div>
 
-    <!-- Кнопка "На главную" -->
-    <a href="https://www.ristar.co" 
-       style="position: fixed; 
-              bottom: 20px; 
-              right: 20px; 
-              background: #3498db; 
-              color: white; 
-              padding: 12px 20px; 
-              border-radius: 50px; 
-              text-decoration: none; 
-              box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-              z-index: 1000;
-              font-family: Arial, sans-serif;
-              font-weight: bold;
-              display: flex;
-              align-items: center;
-              gap: 8px;">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"/>
-        </svg>
-        На главную
-    </a>
+    <a href="https://results.ristar.co" class="floating-button home-btn">
+    <span class="button-icon">🏠</span> Back Home
+  </a>
+</div>
+
+<style>
+  .floating-buttons {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+  }
+  
+  .floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .download-btn {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background: linear-gradient(135deg, #4e09a0 0%, #1c5dd4 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+  }
+  
+  .home-btn:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 768px) {
+    .floating-buttons {
+      left: 10px;
+      bottom: 10px;
+      right: 10px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    
+    .floating-button {
+      flex: 1;
+      padding: 10px 15px;
+      font-size: 14px;
+      max-width: 160px;
+    }
+  }
+</style>
     
     <script>
         document.addEventListener('DOMContentLoaded', async function() {
