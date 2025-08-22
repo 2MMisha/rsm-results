@@ -307,6 +307,86 @@
     </div>
   </div>
 
+  <!-- Вставка для кнопок -->
+<div class="floating-buttons">
+  <a href="/summary.pdf" class="floating-button download-btn" download>
+    <span class="button-icon">📄</span> Full Summary Download
+  </a>
+  <a href="https://results.ristar.co" class="floating-button home-btn">
+    <span class="button-icon">🏠</span> Back Home
+  </a>
+</div>
+
+<style>
+  .floating-buttons {
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    z-index: 999;
+  }
+  
+  .floating-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: none;
+  }
+  
+  .download-btn {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    color: white;
+  }
+  
+  .download-btn:hover {
+    background: linear-gradient(135deg, #4e09a0 0%, #1c5dd4 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .home-btn {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    color: white;
+  }
+  
+  .home-btn:hover {
+    background: linear-gradient(135deg, #27ae60 0%, #219653 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  .button-icon {
+    margin-right: 8px;
+    font-size: 16px;
+  }
+
+  /* Адаптивность для мобильных устройств */
+  @media (max-width: 768px) {
+    .floating-buttons {
+      left: 10px;
+      bottom: 10px;
+      right: 10px;
+      flex-direction: row;
+      justify-content: space-around;
+    }
+    
+    .floating-button {
+      flex: 1;
+      padding: 10px 15px;
+      font-size: 14px;
+      max-width: 160px;
+    }
+  }
+</style>
   
     <section id="category-1">
       <h2>Youth Open - Quickstep Cup</h2>
